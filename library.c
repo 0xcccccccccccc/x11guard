@@ -41,7 +41,9 @@ XImage *XGetImage(Display *display, Drawable d, int x, int y, unsigned int width
     orig_XGetImage = (orig_XGetImage_f_type)dlsym(RTLD_NEXT, "XGetImage");
 
     // 发送通知
-    send_kde_notification();
+    if(plane_mask==AllPlanes){
+        send_kde_notification();
+    }
 
     // 调用原始的 XGetImage 函数
     return orig_XGetImage(display, d, x, y, width, height, plane_mask, format);
