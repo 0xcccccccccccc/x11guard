@@ -1,0 +1,1 @@
+export LD_PRELOAD="/usr/lib/libx11guard.so $LD_PRELOAD"
