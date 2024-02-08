@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.28)
+project(x11guard C)
+
+set(CMAKE_C_STANDARD 11)
+link_libraries(X11 dl)
+
+add_library(x11guard SHARED library.c)
