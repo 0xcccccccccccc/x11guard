@@ -5,3 +5,8 @@ set(CMAKE_C_STANDARD 11)
 link_libraries(X11 dl)
 
 add_library(x11guard SHARED library.c)
+
+install(
+        TARGETS x11guard
+        LIBRARY DESTINATION lib
+)
